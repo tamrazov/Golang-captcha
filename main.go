@@ -1,9 +1,9 @@
 package main
 
 import (
-    "github.com/joho/godotenv"
-    "os"
-    "image"
+		"github.com/joho/godotenv"
+		"os"
+		"image"
 		"image/png"
 		"image/color"
 		"golang.org/x/image/font"
@@ -14,9 +14,9 @@ import (
 )
 
 func main() {
-  _ = godotenv.Load(".env"); // start watch .env
+	_ = godotenv.Load(".env"); // start watch .env
 	DIR_CAPTCHA := os.Getenv("DIR_CAPTCHA"); // parsed .env and create new const DIR_CAPTCHA
-  CreateCap(DIR_CAPTCHA);
+	CreateCap(DIR_CAPTCHA);
 }
 
 func CreateCap(pathImg string)  {
@@ -55,9 +55,9 @@ var seededRand *rand.Rand = rand.New(
 
 // function for create random string
 func StringWithCharset(length int, charset string) string {
-  b := make([]byte, length)
-  for i := range b {
-    b[i] = charset[seededRand.Intn(len(charset))]
-  }
-  return string(b)
+	b := make([]byte, length)
+	for i := range b {
+		b[i] = charset[seededRand.Intn(len(charset))]
+	}
+	return string(b)
 }
